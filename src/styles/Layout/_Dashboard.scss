@@ -1,0 +1,208 @@
+.dashboard {
+  $grid-gap: 14px;
+
+  &__content {
+    display: flex;
+    flex-direction: column;
+    row-gap: $grid-gap;
+
+    &__cards {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(min(300px, 100%), 1fr));
+      gap: $grid-gap;
+
+      .card {
+        padding: 12px 22px 15px 12px;
+        border-radius: 5px;
+        background-color: $white;
+        display: flex;
+        flex-direction: column;
+        gap: 4px;
+        // box-shadow: $box-shadow;
+
+        &__sub_heading {
+          font-size: 14px;
+          font-weight: 600;
+        }
+        &__middle_heading {
+          display: flex;
+          justify-content: space-between;
+          align-items: center;
+
+          h3 {
+            font-size: 24px;
+          }
+
+          &__profit {
+            font-size: 12px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color: $green-1;
+            font-weight: 500;
+          }
+        }
+
+        &__item_sold {
+          font-size: 13px;
+        }
+      }
+    }
+
+    &__middle_content {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: $grid-gap;
+
+      @media screen and (max-width: 1200px) {
+        & {
+          display: flex;
+          flex-direction: column;
+        }
+      }
+
+      &__total_revenue {
+        grid-column-start: 1;
+        grid-column-end: 3;
+        width: 100%;
+        height: 240px;
+      }
+
+      // &__most_sold_items {
+      //   grid-column-start: 3;
+      //   grid-column-end: 4;
+      //   padding: 12px;
+      //   width: 100%;
+      //   background-color: $white;
+      //   border-radius: 5px;
+
+      //   &__bars {
+      //     display: flex;
+      //     flex-direction: column;
+      //     row-gap: 11px;
+      //     margin-top: 8px;
+
+      //     &__item {
+      //       display: flex;
+      //       flex-direction: column;
+
+      //       &__name_and_percentage {
+      //         display: flex;
+      //         justify-content: space-between;
+      //         align-items: center;
+      //         font-size: 14px;
+      //         font-weight: 600;
+      //       }
+
+      //       &__progress {
+      //         height: 8px;
+      //         width: 100%;
+      //         background-color: $black-4;
+      //         border-radius: 9px;
+      //         overflow: hidden;
+
+      //         &__count {
+      //           height: 100%;
+      //           background-color: $red;
+      //         }
+      //       }
+      //     }
+      //   }
+      // }
+
+      &__revenue {
+        width: 100%;
+        background-color: $white;
+        border-radius: 5px;
+        padding: 14px;
+
+        &__total_revenue {
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          flex-direction: column;
+          padding: 20px 0;
+          color: $red;
+
+          h1 {
+            white-space: nowrap;
+          }
+
+          span {
+            font-size: 12px;
+          }
+        }
+
+        .dashboard__content__middle_content__bars {
+          display: flex;
+          flex-direction: column;
+          row-gap: 11px;
+          margin-top: 8px;
+
+          &__item {
+            display: flex;
+            flex-direction: column;
+
+            &__name_and_percentage {
+              display: flex;
+              justify-content: space-between;
+              align-items: center;
+              font-size: 12px;
+              font-weight: 600;
+            }
+
+            &__progress {
+              height: 8px;
+              width: 100%;
+              background-color: $black-4;
+              border-radius: 9px;
+              overflow: hidden;
+
+              &__count {
+                height: 100%;
+                background-color: $red;
+              }
+            }
+          }
+        }
+      }
+    }
+
+    &__latest_orders {
+      padding: 10px 12px 3px;
+      width: 100%;
+      background-color: $white;
+      border-radius: 5px;
+      display: flex;
+      flex-direction: column;
+      row-gap: calc($grid-gap - 11px);
+
+      table {
+        border-collapse: collapse;
+        width: 100%;
+        border-radius: 5px;
+        overflow: hidden;
+        font-size: 14px;
+
+        tr:nth-child(1) {
+          background-color: $white-2;
+          font-size: 14px !important;
+        }
+
+        th {
+          text-align: left;
+          padding: 6px 20px;
+          font-weight: 500;
+          font-size: 14px;
+        }
+
+        td {
+          text-align: left;
+          padding: 7px 20px;
+          font-weight: 500;
+          font-size: 13px;
+        }
+      }
+    }
+  }
+}

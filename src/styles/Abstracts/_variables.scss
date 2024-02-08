@@ -1,0 +1,40 @@
+$black: #000;
+$black-1: #808191;
+$black-2: #bababa;
+$black-3: #e3e3e3;
+$black-4: #e3e7fc;
+$black-5: #858585;
+$black-backdrop: rgba(0, 0, 0, 0.4);
+
+$green: #2bb567;
+$green-1: #4ce13f;
+
+$white: #fff;
+$white-1: #f3f3f3;
+$white-2: #f2f4ff;
+$white-3: #e8e8e8;
+$white-4: #d5d6db;
+$white-5: #dddcdc;
+
+$red: #fb5151;
+$red-1: #d13131;
+
+$blue: #239eff;
+
+// Breakpoint
+$xs: 0px;
+$sm: 600px;
+$md: 900px;
+$lg: 1000px;
+$xl: 1200px;
+$xxl: 1400px;
+
+$box-shadow: 4px 4px 10px $black-2;
+
+$red-gradient: linear-gradient(to right, #e71010, #fb7070);
+$red-gradient-hover: linear-gradient(to right, #d51212, #ee8c8c);
+
+$green-gradient: linear-gradient(to right, #2bb567, #4ce13f);
+$green-gradient-hover: linear-gradient(to right, #22ac5e, #57d74b);
+
+// $red-gradient: linear-gradient(to right, #e71010, blue);

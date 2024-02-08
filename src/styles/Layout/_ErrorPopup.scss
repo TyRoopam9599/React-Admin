@@ -1,0 +1,98 @@
+.ticker {
+  position: fixed;
+  z-index: 1000000;
+  top: 20px;
+  right: 20px;
+  width: 300px;
+  padding: 10px;
+  display: flex;
+  flex-direction: column;
+  row-gap: 10px;
+  background-color: $red;
+  border-radius: 6px;
+  overflow: hidden;
+  color: $white;
+  font-family: "Poppins", sans-serif;
+
+  p {
+    margin-top: -10px;
+    margin-bottom: 5px;
+    font-size: 14px;
+    width: 100%;
+  }
+
+  &__timeline {
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    height: 3px;
+    width: 100%;
+    background-color: $white-2;
+
+    &__line {
+      display: block;
+      background-color: $red;
+      height: 100%;
+      width: 0;
+      animation-name: animationChange;
+      animation-timing-function: linear;
+    }
+    @keyframes animationChange {
+      from {
+        width: 0%;
+      }
+      to {
+        width: 100%;
+      }
+    }
+  }
+}
+.success_ticker {
+  position: fixed;
+  z-index: 1000000;
+  top: 20px;
+  right: 20px;
+  width: 300px;
+  padding: 10px;
+  display: flex;
+  flex-direction: column;
+  row-gap: 10px;
+  background-color: $green;
+  border-radius: 6px;
+  overflow: hidden;
+  color: $white;
+  font-family: "Poppins", sans-serif;
+
+  p {
+    margin-top: -10px;
+    margin-bottom: 5px;
+    font-size: 14px;
+    width: 100%;
+  }
+
+  &__timeline {
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    height: 3px;
+    width: 100%;
+    background-color: $white-2;
+
+    &__line {
+      display: block;
+      background-color: $green;
+      height: 100%;
+      width: 0;
+      animation-name: animationChange;
+      animation-timing-function: linear;
+    }
+    @keyframes animationChange {
+      from {
+        width: 0%;
+      }
+      to {
+        width: 100%;
+      }
+    }
+  }
+}
