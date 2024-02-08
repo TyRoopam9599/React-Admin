@@ -2,8 +2,8 @@ import React, { useEffect, useRef, useState } from "react";
 import ArrowUpwardIcon from "@mui/icons-material/ArrowUpward";
 import ArrowDownwardIcon from "@mui/icons-material/ArrowDownward";
 import Highcharts from "highcharts";
-import http from "../../services/utility";
-import { apisPath } from "../../utils/path";
+// import http from "../../services/utility";
+// import { apisPath } from "../../utils/path";
 
 export default function Dashboard() {
   const [profit, loss] = ["profit", "loss"];
@@ -79,15 +79,24 @@ export default function Dashboard() {
     ],
   });
 
+  const [res, setRes] = useState({
+    data: {
+      dashboard: {
+
+      },
+    },
+  })
+
   useEffect(() => {
     getData();
   }, []);
 
+
   const getData = async () => {
-    await http
-      .get(`${apisPath?.admin?.dashboard}`)
-      .then(async (res) => {
-        let data = res?.data?.dashboard;
+    // await http
+    //   .get(`${apisPath?.admin?.dashboard}`)
+    //   .then(async (res) => {
+        let data = dummyData;
         setTableData(data?.recentOrders);
         // card data
         let card_data = [
@@ -125,10 +134,10 @@ export default function Dashboard() {
         // revData['amount'] = data?.
 
         setDashboardData(data);
-      })
-      .catch((err) => {
-        console.log(err);
-      });
+      // })
+      // .catch((err) => {
+      //   console.log(err);
+      // });
   };
 
   useEffect(() => {
@@ -330,3 +339,400 @@ const DashboardCard = ({ data }) => {
     </div>
   );
 };
+
+
+const dummyData = {
+  "yearly": {
+      "totalQty": 0,
+      "totalPrice": 0,
+      "percentChangeSales": null,
+      "percentChangePrice": null
+  },
+  "monthly": {
+      "totalQty": 0,
+      "totalPrice": 0,
+      "percentChangeSales": 100,
+      "percentChangePrice": -100
+  },
+  "monthlyChart": {
+      "currentYear": [
+          {
+              "month": "January",
+              "totalPrice": 17397
+          },
+          {
+              "month": "February",
+              "totalPrice": 0
+          },
+          {
+              "month": "March",
+              "totalPrice": 0
+          },
+          {
+              "month": "April",
+              "totalPrice": 0
+          },
+          {
+              "month": "May",
+              "totalPrice": 0
+          },
+          {
+              "month": "June",
+              "totalPrice": 0
+          },
+          {
+              "month": "July",
+              "totalPrice": 0
+          },
+          {
+              "month": "August",
+              "totalPrice": 0
+          },
+          {
+              "month": "September",
+              "totalPrice": 0
+          },
+          {
+              "month": "October",
+              "totalPrice": 0
+          },
+          {
+              "month": "November",
+              "totalPrice": 0
+          },
+          {
+              "month": "December",
+              "totalPrice": 0
+          }
+      ],
+      "lastYear": [
+          {
+              "month": "January",
+              "totalPrice": 0
+          },
+          {
+              "month": "February",
+              "totalPrice": 0
+          },
+          {
+              "month": "March",
+              "totalPrice": 0
+          },
+          {
+              "month": "April",
+              "totalPrice": 0
+          },
+          {
+              "month": "May",
+              "totalPrice": 0
+          },
+          {
+              "month": "June",
+              "totalPrice": 0
+          },
+          {
+              "month": "July",
+              "totalPrice": 0
+          },
+          {
+              "month": "August",
+              "totalPrice": 0
+          },
+          {
+              "month": "September",
+              "totalPrice": 0
+          },
+          {
+              "month": "October",
+              "totalPrice": 0
+          },
+          {
+              "month": "November",
+              "totalPrice": 0
+          },
+          {
+              "month": "December",
+              "totalPrice": 0
+          }
+      ]
+  },
+  "recentOrders": [
+      {
+          "id": 2,
+          "user": {
+              "id": 4,
+              "image": "https://13.126.83.194/uploads/1705832257352.jpg",
+              "name": "Kevin new",
+              "phone": "8287413509",
+              "email": "kev@gmail.com",
+              "gender": "helicopter",
+              "bglCash": 0,
+              "dob": "2020-12-12",
+              "height": null,
+              "weight": null,
+              "referCode": "BGL706825",
+              "createdAt": "2024-01-20T15:53:47.000Z",
+              "updatedAt": "2024-01-21T10:17:37.000Z"
+          },
+          "product": [
+              {
+                  "id": 2,
+                  "catId": 1,
+                  "subCatId": 1,
+                  "name": "MuscleBlaze",
+                  "price": 6100,
+                  "sellingPrice": 5799,
+                  "premiumPrice": 6000,
+                  "expireDate": "2023-01-01",
+                  "isBestSeller": false,
+                  "weight": 10,
+                  "stock": 1021,
+                  "flavor": "test",
+                  "images": [
+                      "https://13.126.83.194/uploads/1705758250485.png",
+                      "https://13.126.83.194/uploads/1705764265076.jpg",
+                      "https://13.126.83.194/uploads/1705764267328.jpg",
+                      "https://13.126.83.194/uploads/1705764270838.jpg",
+                      "https://13.126.83.194/uploads/1705764274454.jpg",
+                      "https://13.126.83.194/uploads/1705764278047.jpg"
+                  ],
+                  "overView": [
+                      {
+                          "value": "10",
+                          "nutrients": "test"
+                      }
+                  ],
+                  "details": [
+                      {
+                          "body": "test",
+                          "heading": "test"
+                      },
+                      {
+                          "body": "test",
+                          "heading": "test"
+                      }
+                  ],
+                  "tables": [
+                      {
+                          "table": [
+                              {
+                                  "for": "t",
+                                  "value": "1"
+                              },
+                              {
+                                  "for": "e",
+                                  "value": "3"
+                              },
+                              {
+                                  "for": "w",
+                                  "value": "2"
+                              },
+                              {
+                                  "for": "s",
+                                  "value": "3"
+                              },
+                              {
+                                  "for": "t",
+                                  "value": "2"
+                              }
+                          ],
+                          "title": "test"
+                      }
+                  ],
+                  "information": [
+                      {
+                          "value": "10",
+                          "nutrients": "test"
+                      }
+                  ],
+                  "certificates": [
+                      "https://13.126.83.194/uploads/1705758311739.png",
+                      "https://13.126.83.194/uploads/1705764314426.jpg"
+                  ],
+                  "supplements": [
+                      "https://13.126.83.194/uploads/1705758316603.png",
+                      "https://13.126.83.194/uploads/1705764311938.webp"
+                  ],
+                  "brand": {
+                      "body": "test",
+                      "heading": "test"
+                  },
+                  "createdAt": "2024-01-20T13:45:22.000Z",
+                  "updatedAt": "2024-01-22T17:05:09.000Z"
+              }
+          ],
+          "address": {
+              "id": 3,
+              "user": 4,
+              "flat": "267",
+              "landmark": "near shiv mandir",
+              "city": "palwal",
+              "state": "",
+              "pincode": "121102",
+              "name": "ankit kumar",
+              "phone": "8287413509",
+              "type": "home",
+              "isDefault": false,
+              "createdAt": "2024-01-20T16:08:17.000Z",
+              "updatedAt": "2024-01-20T16:08:17.000Z"
+          },
+          "usedCoupon": false,
+          "coupon": 0,
+          "couponDiscount": 0,
+          "amount": 11598,
+          "qty": [
+              2
+          ],
+          "paymentMethod": "COD",
+          "transactionId": null,
+          "usedBGLCash": true,
+          "bglCash": 0,
+          "earnedBglCash": 0,
+          "shiping": 262.76,
+          "totalAmount": 11597,
+          "orderID": "#218280",
+          "trackingID": null,
+          "status": "Processing",
+          "createdAt": "2024-01-20T16:20:19.000Z",
+          "updatedAt": "2024-01-20T16:20:19.000Z"
+      },
+      {
+          "id": 1,
+          "user": {
+              "id": 1,
+              "image": "https://13.126.83.194/uploads/1705832719127.jpg",
+              "name": "Itachi Kumar uchiha",
+              "phone": "8295451564",
+              "email": "heli@gmail.com",
+              "gender": "Helicopter",
+              "bglCash": 0,
+              "dob": "2024-01-10",
+              "height": null,
+              "weight": null,
+              "referCode": "BGL675656",
+              "createdAt": "2024-01-20T13:30:06.000Z",
+              "updatedAt": "2024-01-21T10:45:38.000Z"
+          },
+          "product": [
+              {
+                  "id": 1,
+                  "catId": 1,
+                  "subCatId": 1,
+                  "name": "test",
+                  "price": 1,
+                  "sellingPrice": 3,
+                  "premiumPrice": 3,
+                  "expireDate": "2022-01-01",
+                  "isBestSeller": true,
+                  "weight": 19,
+                  "stock": 101011,
+                  "flavor": "test",
+                  "images": [
+                      "https://13.126.83.194/uploads/1705756549833.png"
+                  ],
+                  "overView": [
+                      {
+                          "value": "18",
+                          "nutrients": "test"
+                      }
+                  ],
+                  "details": [
+                      {
+                          "body": "test",
+                          "heading": "test"
+                      },
+                      {
+                          "body": "test",
+                          "heading": "test"
+                      }
+                  ],
+                  "tables": [
+                      {
+                          "table": [
+                              {
+                                  "for": "t",
+                                  "value": "1"
+                              },
+                              {
+                                  "for": "e",
+                                  "value": "11"
+                              },
+                              {
+                                  "for": "st",
+                                  "value": "1"
+                              },
+                              {
+                                  "for": "t",
+                                  "value": "1"
+                              },
+                              {
+                                  "for": "t",
+                                  "value": "1"
+                              }
+                          ],
+                          "title": "test"
+                      }
+                  ],
+                  "information": [
+                      {
+                          "value": "4",
+                          "nutrients": "test"
+                      }
+                  ],
+                  "certificates": [
+                      "https://13.126.83.194/uploads/1705756608988.png"
+                  ],
+                  "supplements": [
+                      "https://13.126.83.194/uploads/1705756613089.png"
+                  ],
+                  "brand": {
+                      "body": "test",
+                      "heading": "test"
+                  },
+                  "createdAt": "2024-01-20T13:17:04.000Z",
+                  "updatedAt": "2024-01-22T17:05:06.000Z"
+              }
+          ],
+          "address": {
+              "id": 2,
+              "user": 1,
+              "flat": "A-102",
+              "landmark": "Near Park",
+              "city": "Cityville",
+              "state": "Chhattigsarh",
+              "pincode": "492013",
+              "name": "Alhn",
+              "phone": "9399369854",
+              "type": "Home",
+              "isDefault": true,
+              "createdAt": "2024-01-20T14:53:34.000Z",
+              "updatedAt": "2024-01-20T14:53:34.000Z"
+          },
+          "usedCoupon": false,
+          "coupon": 0,
+          "couponDiscount": 0,
+          "amount": 5799,
+          "qty": [
+              1
+          ],
+          "paymentMethod": "COD",
+          "transactionId": null,
+          "usedBGLCash": true,
+          "bglCash": 0,
+          "earnedBglCash": 0,
+          "shiping": 158.38,
+          "totalAmount": 5798,
+          "orderID": "#385733",
+          "trackingID": null,
+          "status": "Cancelled",
+          "createdAt": "2024-01-20T15:45:12.000Z",
+          "updatedAt": "2024-02-01T01:46:22.000Z"
+      }
+  ],
+  "subscriptions": {
+      "totalEarning": 0,
+      "yearPercentage": null,
+      "monthPercentage": null,
+      "weekPercentage": null
+  }
+}

@@ -222,7 +222,7 @@ export default function Sidebar({ sidebarRef }) {
         <CloseIcon />
       </IconButton>
       <div className="sidebar__logo">
-        <img src={logo} alt="Bignlean" />
+        <img src={logo} alt="Odravel" />
       </div>
       <ul className="sidebar__element">
         {sidebarElement?.map((Element, index) => {

@@ -37,7 +37,7 @@ export default function Login() {
 
   return (
     <div className="login">
-      <img src={Logo} alt="bignlean" />
+      <img src={Logo} alt="Odravel" />
       <h3>Log In</h3>
       <div className="login__content">
         <div className="transparent__input login__input">

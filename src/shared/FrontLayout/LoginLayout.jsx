@@ -12,7 +12,7 @@ const Frontlayout = () => {
   };
   return (
     <div className="login_main">
-      <img src={Logo} alt="bignlean" className="login_main__logo" />
+      <img src={Logo} alt="Odravel" className="login_main__logo" />
       <div className="login_main__outlet">
         <Outlet />
       </div>

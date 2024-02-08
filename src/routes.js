@@ -36,7 +36,7 @@ export default function Router() {
     return (
         <Suspense fallback={loading}>
             <Routes>
-                {!loggedIn ?
+                {loggedIn ?
                     <Route path={paths?.front?.commonPoint} element={<LoginLayout />}>
                         <Route
                             path={paths?.front?.user?.login}
